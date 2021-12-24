@@ -95,7 +95,6 @@ playRound = function () {
   }
 };
 
-console.log(playerScore, computerScore, "dda");
 function game() {
   return playRound();
 }

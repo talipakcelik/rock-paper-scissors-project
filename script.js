@@ -7,47 +7,95 @@ computerPlay = function () {
 };
 
 let playerSelection = "";
-let scores, playerScore, computerScore;
+let playerScore = 0;
+let computerScore = 0;
+
 // yöntem 1
 playRound = function () {
   const computerSelection = computerPlay();
-  scores = [0, 0];
-  playerScore = 0;
-  computerScore = 0;
 
   if (playerSelection === "taş" && computerSelection === "Kağıt") {
-    computerScore = computerScore++;
-    console.log(playerScore, computerScore);
-    return (divs.textContent = "Kaybettin. Kağıt taşı kaplar.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Kaybettin. Kağıt taşı kaplar.";
+      computerScore++;
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "taş" && computerSelection === "Taş") {
-    return (divs.textContent = "Berabere.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Berabere.";
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "taş" && computerSelection === "Makas") {
-    playerScore = playerScore++;
-    console.log(playerScore, computerScore);
-    return (divs.textContent = "Kazandın. Taş makası kırar.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Kazandın. Taş makası kırar.";
+      playerScore++;
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "kağıt" && computerSelection === "Kağıt") {
-    return (divs.textContent = "Berabere.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Berabere.";
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "kağıt" && computerSelection === "Taş") {
-    playerScore = playerScore++;
-    console.log(playerScore, computerScore);
-    return (divs.textContent = "Kazandın. Kağıt taşı kaplar.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Kazandın. Kağıt taşı kaplar.";
+      playerScore++;
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "kağıt" && computerSelection === "Makas") {
-    computerScore = computerScore++;
-    console.log(playerScore, computerScore);
-    return (divs.textContent = "Kaybettin. Makas kağıdı keser.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Kaybettin. Makas kağıdı keser.";
+      computerScore++;
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "makas" && computerSelection === "Kağıt") {
-    playerScore = playerScore++;
-    console.log(playerScore, computerScore);
-    return (divs.textContent = "Kazandın. Makas kağıdı keser.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Kazandın. Makas kağıdı keser.";
+      playerScore++;
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "makas" && computerSelection === "Taş") {
-    computerScore = computerScore++;
-    console.log(playerScore, computerScore);
-    return (divs.textContent = "Kaybettin. Taş makası kırar.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Kaybettin. Taş makası kırar.";
+      computerScore++;
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   } else if (playerSelection === "makas" && computerSelection === "Makas") {
-    return (divs.textContent = "Berabere.");
+    if (playerScore < 5 && computerScore < 5) {
+      divs.textContent = "Berabere.";
+      return (div2.textContent = `Player Score = ${playerScore} - Computer Score ${computerScore}`);
+    } else if (playerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Player kazandı.");
+    else if (computerScore >= 5)
+      return (div3.textContent = "Oyun bitti. Computer kazandı.");
   }
 };
 
+console.log(playerScore, computerScore, "dda");
 function game() {
   return playRound();
 }
@@ -90,8 +138,8 @@ const divs = document.createElement("div");
 document.body.appendChild(divs);
 const div2 = document.createElement("div");
 document.body.appendChild(div2);
-div2.textContent = `${playerScore}`;
-
+const div3 = document.createElement("div");
+document.body.appendChild(div3);
 // console.log(butonAll);
 
 // butonAll.addEventListener("click", function (e) {
